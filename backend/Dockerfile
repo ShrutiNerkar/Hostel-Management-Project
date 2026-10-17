@@ -2,9 +2,9 @@
 FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
 
-COPY .mvn/ .mvn/
-COPY mvnw pom.xml ./
-COPY src ./src
+COPY backend/.mvn/ .mvn/
+COPY backend/mvnw backend/pom.xml ./
+COPY backend/src/ src/
 
 RUN chmod +x mvnw && ./mvnw -DskipTests package
 
